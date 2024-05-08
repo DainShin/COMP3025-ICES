@@ -11,7 +11,7 @@ import androidx.core.view.WindowInsetsCompat
 class MainActivity : AppCompatActivity()
 {
 
-    @SuppressLint("SetTextI18n")
+    @SuppressLint("SetTextI18n", "MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?)
     {
         super.onCreate(savedInstanceState)
@@ -25,7 +25,6 @@ class MainActivity : AppCompatActivity()
 
 
         val helloWorldTextView = findViewById<TextView>(R.id.helloWordTextView)
-        helloWorldTextView.text = getString(R.string.good_bye_string)
-
+        helloWorldTextView.text = getString(R.string.hello_to_dain)
     }
 }
