@@ -1,6 +1,8 @@
 package ca.georgiancollege.ice2
 
 import android.os.Bundle
+import android.util.Log
+import android.view.View
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -33,5 +35,26 @@ class MainActivity : AppCompatActivity()
 
         val helloWorldTextView = binding.helloWorldTextView
         helloWorldTextView.text = getString(R.string.hello_to_dain)
+
+        val clickMeButton = binding.clickMeButton
+
+        clickMeButton.setOnClickListener {
+            Log.i("onCreate", "Click Me Button clicked!")
+
+            binding.helloWorldTextView.text = getString(R.string.good_bye_dain)
+        }
+
+        val anotherButton = binding.anotherButton
+
+        anotherButton.setOnClickListener {
+            Log.i("onCreate", "another Button Clicked")
+
+            binding.helloWorldTextView.text = getString(R.string.hello_to_dain)
+        }
+    }
+
+    fun sharedButtonHandler(view: View)
+    {
+
     }
 }
