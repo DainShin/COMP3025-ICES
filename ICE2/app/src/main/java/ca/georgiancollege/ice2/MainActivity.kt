@@ -1,6 +1,5 @@
-package ca.georgiancollege.ice1
+package ca.georgiancollege.ice2
 
-import android.annotation.SuppressLint
 import android.os.Bundle
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
