@@ -10,17 +10,15 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import ca.georgiancollege.ice2.databinding.ActivityMainBinding
 
-class MainActivity : AppCompatActivity()
-{
+class MainActivity : AppCompatActivity() {
     //
     private lateinit var binding: ActivityMainBinding
 
-    override fun onCreate(savedInstanceState: Bundle?)
-    {
+    override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         // create a reference to the ActivityMainBinding Class object
-        binding  = ActivityMainBinding.inflate(layoutInflater)
+        binding = ActivityMainBinding.inflate(layoutInflater)
 
         enableEdgeToEdge()
 
@@ -31,30 +29,14 @@ class MainActivity : AppCompatActivity()
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-
-
-        val helloWorldTextView = binding.helloWorldTextView
-        helloWorldTextView.text = getString(R.string.hello_to_dain)
-
-        val clickMeButton = binding.clickMeButton
-
-        clickMeButton.setOnClickListener {
-            Log.i("onCreate", "Click Me Button clicked!")
-
-            binding.helloWorldTextView.text = getString(R.string.good_bye_dain)
-        }
-
-        val anotherButton = binding.anotherButton
-
-        anotherButton.setOnClickListener {
-            Log.i("onCreate", "another Button Clicked")
-
-            binding.helloWorldTextView.text = getString(R.string.hello_to_dain)
+    }
+        fun sharedButtonHandler(view: View) {
+            if (view.id == R.id.clickMeButton) {
+                Log.i("onCreate", "Click Me Button clicked!")
+                binding.helloWorldTextView.text = getString(R.string.good_bye_dain)
+            } else if (view.id == R.id.anotherButton) {
+                Log.i("onCreate", "another Button Clicked")
+                binding.helloWorldTextView.text = getString(R.string.hello_to_dain)
+            }
         }
     }
-
-    fun sharedButtonHandler(view: View)
-    {
-
-    }
-}

@@ -32,7 +32,9 @@
         app:layout_constraintEnd_toStartOf="@id/anotherButton"
 
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/helloWorldTextView" />
+        app:layout_constraintTop_toBottomOf="@+id/helloWorldTextView"
+        android:onClick="sharedButtonHandler"
+        />
 
     <Button
         android:id="@+id/anotherButton"
@@ -43,7 +45,9 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/clickMeButton"
-        app:layout_constraintTop_toBottomOf="@+id/helloWorldTextView" />
+        app:layout_constraintTop_toBottomOf="@+id/helloWorldTextView"
+        android:onClick="sharedButtonHandler"
+        />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
