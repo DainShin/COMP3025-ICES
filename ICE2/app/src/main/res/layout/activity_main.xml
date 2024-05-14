@@ -8,7 +8,7 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/helloWordTextView"
+        android:id="@+id/helloWorldTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif"
@@ -16,8 +16,8 @@
         android:text="@string/hello_to_dain"
         android:textAlignment="center"
         android:textColor="@color/design_default_color_primary_dark"
-        android:textColorLink="@color/design_default_color_primary_dark"
-        android:textSize="50sp"
+        android:textColorLink="@color/design_default_color_primary"
+        android:textSize="@dimen/text_size"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
