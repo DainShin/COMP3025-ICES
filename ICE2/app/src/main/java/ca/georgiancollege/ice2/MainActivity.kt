@@ -11,7 +11,6 @@ import androidx.core.view.WindowInsetsCompat
 import ca.georgiancollege.ice2.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
-    //
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -30,13 +29,14 @@ class MainActivity : AppCompatActivity() {
             insets
         }
     }
-        fun sharedButtonHandler(view: View) {
-            if (view.id == R.id.clickMeButton) {
-                Log.i("onCreate", "Click Me Button clicked!")
-                binding.helloWorldTextView.text = getString(R.string.good_bye_dain)
-            } else if (view.id == R.id.anotherButton) {
-                Log.i("onCreate", "another Button Clicked")
-                binding.helloWorldTextView.text = getString(R.string.hello_to_dain)
-            }
+
+    fun sharedButtonHandler(view: View) {
+        if (view.id == R.id.clickMeButton) {
+            Log.i("onCreate", "Click Me Button clicked!")
+            binding.helloWorldTextView.text = getString(R.string.good_bye_dain)
+        } else if (view.id == R.id.anotherButton) {
+            Log.i("onCreate", "Another Button Clicked")
+            binding.helloWorldTextView.text = getString(R.string.hello_to_dain)
         }
     }
+}
