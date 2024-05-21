@@ -32,5 +32,13 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    /*
+    * Complete the Calculator Layout
+    * Select a colour for the Number Buttons and the background
+    * Create two shared handler functions - one for operator buttons and one for number buttons
+    * Add Listeners for each button that point to the correct handler function
+    * Have the handler functions output the tag of the button clicked to the resultTextView
+    * */
+
 
 }

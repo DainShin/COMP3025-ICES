@@ -5,6 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/black"
     tools:context=".MainActivity">
 
     <LinearLayout
@@ -25,12 +26,12 @@
             android:layout_height="@dimen/button_size"
             android:layout_marginStart="@dimen/m_x"
             android:layout_marginEnd="@dimen/m_x"
-            android:layout_weight="1"
             android:fontFamily="@font/fa_solid_900"
             android:gravity="end"
             android:paddingTop="@dimen/p_y"
             android:paddingEnd="@dimen/p_y"
             android:text="0"
+            android:textColor="@color/white"
             android:textSize="@dimen/result_textSize" />
     </LinearLayout>
 
@@ -55,6 +56,7 @@
             android:fontFamily="@font/fa_solid_900"
             android:paddingStart="@dimen/p_x"
             android:paddingEnd="@dimen/p_x"
+            android:tag="clear"
             android:text="C"
             android:textColor="@color/black"
             android:textSize="@dimen/button_text" />
@@ -70,6 +72,7 @@
             android:fontFamily="@font/fa_solid_900"
             android:paddingStart="@dimen/p_x"
             android:paddingEnd="@dimen/p_x"
+            android:tag="percent"
             android:text="@string/percent"
             android:textColor="@color/black"
             android:textSize="@dimen/button_text" />
@@ -85,6 +88,7 @@
             android:fontFamily="@font/fa_solid_900"
             android:paddingStart="@dimen/p_x"
             android:paddingEnd="@dimen/p_x"
+            android:tag="delete"
             android:text="@string/delete"
             android:textColor="@color/black"
             android:textSize="@dimen/button_text" />
@@ -100,6 +104,7 @@
             android:fontFamily="@font/fa_solid_900"
             android:paddingStart="@dimen/p_x"
             android:paddingEnd="@dimen/p_x"
+            android:tag="divide"
             android:text="@string/divide"
             android:textColor="@color/white"
             android:textSize="@dimen/button_text" />
@@ -197,6 +202,7 @@
             android:fontFamily="@font/fa_solid_900"
             android:paddingStart="@dimen/p_x"
             android:paddingEnd="@dimen/p_x"
+            android:tag="four"
             android:text="4"
             android:textColor="@color/white"
             android:textSize="@dimen/button_text" />
@@ -212,6 +218,7 @@
             android:fontFamily="@font/fa_solid_900"
             android:paddingStart="@dimen/p_x"
             android:paddingEnd="@dimen/p_x"
+            android:tag="five"
             android:text="5"
             android:textColor="@color/white"
             android:textSize="@dimen/button_text" />
@@ -227,6 +234,7 @@
             android:fontFamily="@font/fa_solid_900"
             android:paddingStart="@dimen/p_x"
             android:paddingEnd="@dimen/p_x"
+            android:tag="six"
             android:text="6"
             android:textColor="@color/white"
             android:textSize="@dimen/button_text" />
@@ -242,6 +250,7 @@
             android:fontFamily="@font/fa_solid_900"
             android:paddingStart="@dimen/p_x"
             android:paddingEnd="@dimen/p_x"
+            android:tag="minus"
             android:text="@string/minus"
             android:textColor="@color/white"
             android:textSize="@dimen/button_text" />
@@ -268,6 +277,7 @@
             android:fontFamily="@font/fa_solid_900"
             android:paddingStart="@dimen/p_x"
             android:paddingEnd="@dimen/p_x"
+            android:tag="one"
             android:text="1"
             android:textColor="@color/white"
             android:textSize="@dimen/button_text" />
@@ -283,6 +293,7 @@
             android:fontFamily="@font/fa_solid_900"
             android:paddingStart="@dimen/p_x"
             android:paddingEnd="@dimen/p_x"
+            android:tag="two"
             android:text="2"
             android:textColor="@color/white"
             android:textSize="@dimen/button_text" />
@@ -298,6 +309,7 @@
             android:fontFamily="@font/fa_solid_900"
             android:paddingStart="@dimen/p_x"
             android:paddingEnd="@dimen/p_x"
+            android:tag="three"
             android:text="3"
             android:textColor="@color/white"
             android:textSize="@dimen/button_text" />
@@ -313,6 +325,7 @@
             android:fontFamily="@font/fa_solid_900"
             android:paddingStart="@dimen/p_x"
             android:paddingEnd="@dimen/p_x"
+            android:tag="plus"
             android:text="@string/plus"
             android:textColor="@color/white"
             android:textSize="@dimen/button_text" />
@@ -339,6 +352,7 @@
             android:fontFamily="@font/fa_solid_900"
             android:paddingStart="@dimen/p_x"
             android:paddingEnd="@dimen/p_x"
+            android:tag="plus_minus"
             android:text="@string/plus_minus"
             android:textColor="@color/black"
             android:textSize="@dimen/button_text" />
@@ -354,6 +368,7 @@
             android:fontFamily="@font/fa_solid_900"
             android:paddingStart="@dimen/p_x"
             android:paddingEnd="@dimen/p_x"
+            android:tag="zero"
             android:text="0"
             android:textColor="@color/white"
             android:textSize="@dimen/button_text" />
@@ -369,6 +384,7 @@
             android:fontFamily="@font/fa_solid_900"
             android:paddingStart="@dimen/p_x"
             android:paddingEnd="@dimen/p_x"
+            android:tag="decimal"
             android:text="."
             android:textColor="@color/white"
             android:textSize="@dimen/button_text" />
@@ -384,12 +400,11 @@
             android:fontFamily="@font/fa_solid_900"
             android:paddingStart="@dimen/p_x"
             android:paddingEnd="@dimen/p_x"
+            android:tag="equals"
             android:text="@string/equals"
             android:textColor="@color/white"
             android:textSize="@dimen/button_text" />
     </LinearLayout>
-
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
