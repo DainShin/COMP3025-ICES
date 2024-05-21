@@ -29,12 +29,112 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
+        // 1. loop over the value
+        // 2. if the value is number then call the numbersHandler
+        // 3. if the value is operator then call the operatorHandler
+        // 4. each function need to print out the value in the resultView section
 
+        // call the function based on each values
+        binding.clearButton.setOnClickListener {
+            operatorsHandler(it as Button)
+        }
+
+        binding.percentButton.setOnClickListener {
+            operatorsHandler(it as Button)
+        }
+
+        binding.deleteButton.setOnClickListener {
+            operatorsHandler(it as Button)
+        }
+
+        binding.divideButton.setOnClickListener {
+            operatorsHandler(it as Button)
+        }
+
+        binding.sevenButton.setOnClickListener {
+            numbersHandler(it as Button)
+        }
+
+        binding.eightButton.setOnClickListener {
+            numbersHandler(it as Button)
+        }
+
+        binding.nineButton.setOnClickListener {
+            numbersHandler(it as Button)
+        }
+
+        binding.fourButton.setOnClickListener {
+            numbersHandler(it as Button)
+        }
+
+        binding.fiveButton.setOnClickListener {
+            numbersHandler(it as Button)
+        }
+
+        binding.sixButton.setOnClickListener {
+            numbersHandler(it as Button)
+        }
+
+        binding.oneButton.setOnClickListener {
+            numbersHandler(it as Button)
+        }
+
+        binding.twoButton.setOnClickListener {
+            numbersHandler(it as Button)
+        }
+
+        binding.threeButton.setOnClickListener {
+            numbersHandler(it as Button)
+        }
+
+        binding.zeroButton.setOnClickListener {
+            numbersHandler(it as Button)
+        }
+
+        binding.decimalButton.setOnClickListener {
+            numbersHandler(it as Button)
+        }
+
+        binding.plusMinusButton.setOnClickListener {
+            operatorsHandler(it as Button)
+        }
+
+        binding.equalsButton.setOnClickListener {
+            operatorsHandler(it as Button)
+        }
+
+        binding.plusButton.setOnClickListener {
+            operatorsHandler(it as Button)
+        }
+
+        binding.minusButton.setOnClickListener {
+            operatorsHandler(it as Button)
+        }
+
+        binding.multiplyButton.setOnClickListener {
+            operatorsHandler(it as Button)
+        }
+
+        binding.divideButton.setOnClickListener {
+            operatorsHandler(it as Button)
+        }
+
+    }
+
+
+
+    fun numbersHandler(button:Button) {
+        binding.resultTextView.text = button.tag.toString()
+    }
+
+    fun operatorsHandler(button:Button) {
+        binding.resultTextView.text = button.tag.toString()
     }
 
     /*
     * Complete the Calculator Layout
-    * Select a colour for the Number Buttons and the background
+    * Select a colour for the Number Buttons and the background --> ok
+    *
     * Create two shared handler functions - one for operator buttons and one for number buttons
     * Add Listeners for each button that point to the correct handler function
     * Have the handler functions output the tag of the button clicked to the resultTextView

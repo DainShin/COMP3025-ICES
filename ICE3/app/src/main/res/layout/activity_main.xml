@@ -56,7 +56,7 @@
             android:fontFamily="@font/fa_solid_900"
             android:paddingStart="@dimen/p_x"
             android:paddingEnd="@dimen/p_x"
-            android:tag="clear"
+            android:tag="c"
             android:text="C"
             android:textColor="@color/black"
             android:textSize="@dimen/button_text" />
@@ -72,7 +72,7 @@
             android:fontFamily="@font/fa_solid_900"
             android:paddingStart="@dimen/p_x"
             android:paddingEnd="@dimen/p_x"
-            android:tag="percent"
+            android:tag="%"
             android:text="@string/percent"
             android:textColor="@color/black"
             android:textSize="@dimen/button_text" />
@@ -131,6 +131,7 @@
             android:fontFamily="@font/fa_solid_900"
             android:paddingStart="@dimen/p_x"
             android:paddingEnd="@dimen/p_x"
+            android:tag="seven"
             android:text="7"
             android:textColor="@color/white"
             android:textSize="@dimen/button_text" />
@@ -146,6 +147,7 @@
             android:fontFamily="@font/fa_solid_900"
             android:paddingStart="@dimen/p_x"
             android:paddingEnd="@dimen/p_x"
+            android:tag="eight"
             android:text="8"
             android:textColor="@color/white"
             android:textSize="@dimen/button_text" />
@@ -161,6 +163,7 @@
             android:fontFamily="@font/fa_solid_900"
             android:paddingStart="@dimen/p_x"
             android:paddingEnd="@dimen/p_x"
+            android:tag="nine"
             android:text="9"
             android:textColor="@color/white"
             android:textSize="@dimen/button_text" />
@@ -176,6 +179,7 @@
             android:fontFamily="@font/fa_solid_900"
             android:paddingStart="@dimen/p_x"
             android:paddingEnd="@dimen/p_x"
+            android:tag="multiply"
             android:text="@string/multiply"
             android:textColor="@color/white"
             android:textSize="@dimen/button_text" />
@@ -352,7 +356,7 @@
             android:fontFamily="@font/fa_solid_900"
             android:paddingStart="@dimen/p_x"
             android:paddingEnd="@dimen/p_x"
-            android:tag="plus_minus"
+            android:tag="+/-"
             android:text="@string/plus_minus"
             android:textColor="@color/black"
             android:textSize="@dimen/button_text" />
