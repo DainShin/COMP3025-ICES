@@ -3,6 +3,7 @@ package ca.georgiancollege.ice3
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.Button
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -27,15 +28,47 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+        binding.helloWorldTextView.text =getString(R.string.hello_world_string)
+
+        binding.clickMeButton.setOnClickListener {
+           sharedButtonHandler(it as Button)
+        }
+
+       binding.anotherButton.setOnClickListener {
+           sharedButtonHandler(it as Button)
+          // sharedButtonHandler(binding.anotherButton)
+       }
     }
 
-    fun sharedButtonHandler(view: View) {
-        if (view.id == R.id.clickMeButton) {
-            Log.i("onCreate", "Click Me Button clicked!")
-            binding.helloWorldTextView.text = getString(R.string.good_bye_dain)
-        } else if (view.id == R.id.anotherButton) {
-            Log.i("onCreate", "Another Button Clicked")
-            binding.helloWorldTextView.text = getString(R.string.hello_to_dain)
+    fun sharedButtonHandler(button: Button) =
+        // cast the button as a Button object
+        // val button = view as Button
+        when(button) {
+            binding.anotherButton -> {
+                binding.helloWorldTextView.text = getString(R.string.something_else)
+            }
+            binding.clickMeButton -> {
+                // toggle
+//                if(binding.helloWorldTextView.text == "Clicked!")
+//                {
+//                    binding.helloWorldTextView.text = getString(R.string.not_clicked)
+//                }
+//                else
+//                {
+//                    binding.helloWorldTextView.text = getString(R.string.clicked)
+//                }
+                binding.helloWorldTextView.text =
+                    if (binding.helloWorldTextView.text == "Clicked!") getString(R.string.not_clicked)
+                    else getString(R.string.clicked)
+
+                binding.helloWorldTextView.text =
+                    if (binding.helloWorldTextView.text == "Clicked!") getString(R.string.not_clicked)
+                    else getString(R.string.clicked)
+            }
+            else  -> {
+
+            }
         }
-    }
+
 }

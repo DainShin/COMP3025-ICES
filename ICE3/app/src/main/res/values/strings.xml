@@ -2,8 +2,11 @@
     <string name="app_name">ICE3</string>
     <string name="hello_world_string">Hello, World!</string>
     <string name="good_bye_string">Good Bye!</string>
-    <string name="hello_to_dain">Hello, Dain! </string>
+    <string name="hello_dain">Hello, Dain! </string>
     <string name="click_me_button_text">Click Me!</string>
     <string name="good_bye_dain">Good Bye, Dain</string>
     <string name="and_me">And Me!</string>
+    <string name="not_clicked">Not Clicked</string>
+    <string name="clicked">Clicked!</string>
+    <string name="something_else">Something else</string>
 </resources>
