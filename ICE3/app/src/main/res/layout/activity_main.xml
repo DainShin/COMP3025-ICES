@@ -56,7 +56,7 @@
             android:fontFamily="@font/fa_solid_900"
             android:paddingStart="@dimen/p_x"
             android:paddingEnd="@dimen/p_x"
-            android:tag="c"
+            android:tag="clear"
             android:text="C"
             android:textColor="@color/black"
             android:textSize="@dimen/button_text" />
@@ -131,7 +131,7 @@
             android:fontFamily="@font/fa_solid_900"
             android:paddingStart="@dimen/p_x"
             android:paddingEnd="@dimen/p_x"
-            android:tag="seven"
+            android:tag="7"
             android:text="7"
             android:textColor="@color/white"
             android:textSize="@dimen/button_text" />
@@ -147,7 +147,7 @@
             android:fontFamily="@font/fa_solid_900"
             android:paddingStart="@dimen/p_x"
             android:paddingEnd="@dimen/p_x"
-            android:tag="eight"
+            android:tag="8"
             android:text="8"
             android:textColor="@color/white"
             android:textSize="@dimen/button_text" />
@@ -163,7 +163,7 @@
             android:fontFamily="@font/fa_solid_900"
             android:paddingStart="@dimen/p_x"
             android:paddingEnd="@dimen/p_x"
-            android:tag="nine"
+            android:tag="9"
             android:text="9"
             android:textColor="@color/white"
             android:textSize="@dimen/button_text" />
@@ -206,7 +206,7 @@
             android:fontFamily="@font/fa_solid_900"
             android:paddingStart="@dimen/p_x"
             android:paddingEnd="@dimen/p_x"
-            android:tag="four"
+            android:tag="4"
             android:text="4"
             android:textColor="@color/white"
             android:textSize="@dimen/button_text" />
@@ -222,7 +222,7 @@
             android:fontFamily="@font/fa_solid_900"
             android:paddingStart="@dimen/p_x"
             android:paddingEnd="@dimen/p_x"
-            android:tag="five"
+            android:tag="5"
             android:text="5"
             android:textColor="@color/white"
             android:textSize="@dimen/button_text" />
@@ -238,7 +238,7 @@
             android:fontFamily="@font/fa_solid_900"
             android:paddingStart="@dimen/p_x"
             android:paddingEnd="@dimen/p_x"
-            android:tag="six"
+            android:tag="6"
             android:text="6"
             android:textColor="@color/white"
             android:textSize="@dimen/button_text" />
@@ -281,7 +281,7 @@
             android:fontFamily="@font/fa_solid_900"
             android:paddingStart="@dimen/p_x"
             android:paddingEnd="@dimen/p_x"
-            android:tag="one"
+            android:tag="1"
             android:text="1"
             android:textColor="@color/white"
             android:textSize="@dimen/button_text" />
@@ -297,7 +297,7 @@
             android:fontFamily="@font/fa_solid_900"
             android:paddingStart="@dimen/p_x"
             android:paddingEnd="@dimen/p_x"
-            android:tag="two"
+            android:tag="2"
             android:text="2"
             android:textColor="@color/white"
             android:textSize="@dimen/button_text" />
@@ -313,7 +313,7 @@
             android:fontFamily="@font/fa_solid_900"
             android:paddingStart="@dimen/p_x"
             android:paddingEnd="@dimen/p_x"
-            android:tag="three"
+            android:tag="3"
             android:text="3"
             android:textColor="@color/white"
             android:textSize="@dimen/button_text" />
@@ -356,7 +356,7 @@
             android:fontFamily="@font/fa_solid_900"
             android:paddingStart="@dimen/p_x"
             android:paddingEnd="@dimen/p_x"
-            android:tag="+/-"
+            android:tag="plus_minus"
             android:text="@string/plus_minus"
             android:textColor="@color/black"
             android:textSize="@dimen/button_text" />
@@ -372,7 +372,7 @@
             android:fontFamily="@font/fa_solid_900"
             android:paddingStart="@dimen/p_x"
             android:paddingEnd="@dimen/p_x"
-            android:tag="zero"
+            android:tag="0"
             android:text="0"
             android:textColor="@color/white"
             android:textSize="@dimen/button_text" />

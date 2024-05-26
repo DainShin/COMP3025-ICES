@@ -29,11 +29,6 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
-        // 1. loop over the value
-        // 2. if the value is number then call the numbersHandler
-        // 3. if the value is operator then call the operatorHandler
-        // 4. each function need to print out the value in the resultView section
-
         // call the function based on each values
         binding.clearButton.setOnClickListener {
             operatorsHandler(it as Button)
@@ -121,8 +116,6 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-
-
     fun numbersHandler(button:Button) {
         binding.resultTextView.text = button.tag.toString()
     }
@@ -130,15 +123,5 @@ class MainActivity : AppCompatActivity() {
     fun operatorsHandler(button:Button) {
         binding.resultTextView.text = button.tag.toString()
     }
-
-    /*
-    * Complete the Calculator Layout
-    * Select a colour for the Number Buttons and the background --> ok
-    *
-    * Create two shared handler functions - one for operator buttons and one for number buttons
-    * Add Listeners for each button that point to the correct handler function
-    * Have the handler functions output the tag of the button clicked to the resultTextView
-    * */
-
 
 }
