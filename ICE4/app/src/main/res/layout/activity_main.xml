@@ -388,7 +388,7 @@
             android:fontFamily="@font/fa_solid_900"
             android:paddingStart="@dimen/p_x"
             android:paddingEnd="@dimen/p_x"
-            android:tag="decimal"
+            android:tag="."
             android:text="."
             android:textColor="@color/white"
             android:textSize="@dimen/button_text" />
