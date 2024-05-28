@@ -27,90 +27,22 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
-        // call the function based on each values
-        binding.clearButton.setOnClickListener {
-            operatorsHandler(it as Button)
-        }
+        // list : no index
+        // array : index
+        val operandButtons = arrayOf(
+            binding.oneButton, binding.twoButton, binding.threeButton, binding.fourButton, binding.fiveButton,
+            binding.sixButton, binding.sevenButton, binding.eightButton, binding.nineButton, binding.zeroButton,
+            binding.plusMinusButton, binding.decimalButton, binding.deleteButton
+        )
 
-        binding.percentButton.setOnClickListener {
-            operatorsHandler(it as Button)
-        }
+        
+        var operatorButtons = arrayOf(
+            binding.divideButton, binding.plusButton, binding.minusButton, binding.multiplyButton,
+            binding.percentButton, binding.percentButton, binding.clearButton, binding.equalsButton
+        )
 
-        binding.deleteButton.setOnClickListener {
-            operatorsHandler(it as Button)
-        }
 
-        binding.divideButton.setOnClickListener {
-            operatorsHandler(it as Button)
-        }
 
-        binding.sevenButton.setOnClickListener {
-            numbersHandler(it as Button)
-        }
-
-        binding.eightButton.setOnClickListener {
-            numbersHandler(it as Button)
-        }
-
-        binding.nineButton.setOnClickListener {
-            numbersHandler(it as Button)
-        }
-
-        binding.fourButton.setOnClickListener {
-            numbersHandler(it as Button)
-        }
-
-        binding.fiveButton.setOnClickListener {
-            numbersHandler(it as Button)
-        }
-
-        binding.sixButton.setOnClickListener {
-            numbersHandler(it as Button)
-        }
-
-        binding.oneButton.setOnClickListener {
-            numbersHandler(it as Button)
-        }
-
-        binding.twoButton.setOnClickListener {
-            numbersHandler(it as Button)
-        }
-
-        binding.threeButton.setOnClickListener {
-            numbersHandler(it as Button)
-        }
-
-        binding.zeroButton.setOnClickListener {
-            numbersHandler(it as Button)
-        }
-
-        binding.decimalButton.setOnClickListener {
-            numbersHandler(it as Button)
-        }
-
-        binding.plusMinusButton.setOnClickListener {
-            operatorsHandler(it as Button)
-        }
-
-        binding.equalsButton.setOnClickListener {
-            operatorsHandler(it as Button)
-        }
-
-        binding.plusButton.setOnClickListener {
-            operatorsHandler(it as Button)
-        }
-
-        binding.minusButton.setOnClickListener {
-            operatorsHandler(it as Button)
-        }
-
-        binding.multiplyButton.setOnClickListener {
-            operatorsHandler(it as Button)
-        }
-
-        binding.divideButton.setOnClickListener {
-            operatorsHandler(it as Button)
-        }
 
     }
 
