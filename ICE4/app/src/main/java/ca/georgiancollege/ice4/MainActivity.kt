@@ -81,27 +81,39 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun numberHandler(num: String) {
-        stack.push(num)
 
-        if(binding.resultTextView.text == "0") {
+        // 스택이 비어있고 0이 아니면 넣기
+        if(stack.isEmpty() && num != "0")
+            stack.push(num)
+        else if(stack.isNotEmpty())
+            stack.push(num)
+
+        if(binding.resultTextView.text == "0" || stack.isEmpty()) {
             binding.resultTextView.text = ""
         }
-        binding.resultTextView.append(num)
+
+        updateResultView()
     }
 
     private fun operandHandler(tag: String) {
         when (tag) {
             "." -> {
                 if (!isDecimalClicked) {
-                    binding.resultTextView.append(tag)
+                    if (stack.isEmpty()) {
+                        stack.push("0.")
+                    } else {
+                        stack.push(stack.pop() + ".")
+                    }
                     isDecimalClicked = true
+                    binding.resultTextView.append(".")
                 }
             }
             "delete" -> {
-                if (stack.isNotEmpty()) {
-                    stack.pop()
-                    updateResultView()
+                if(binding.resultTextView.text == "0") {
+                    isPlus = true
                 }
+               stack.pop()
+                updateResultView()
             }
             "clear" -> {
                 stack.clear()
@@ -110,7 +122,12 @@ class MainActivity : AppCompatActivity() {
                 updateResultView()
             }
             "plus_minus" -> {
-                isPlus = !isPlus
+                if(binding.resultTextView.text != "0") {
+                    isPlus = !isPlus
+                }
+               else {
+                   isPlus = true
+                }
                 updateResultView()
             }
         }
@@ -120,10 +137,8 @@ class MainActivity : AppCompatActivity() {
         if (stack.isEmpty()) {
             binding.resultTextView.text = "0"
         } else {
-            binding.resultTextView.text = if (!isPlus) "-" else ""
-            stack.forEach {
-                binding.resultTextView.append(it)
-            }
+            val resultText = stack.joinToString("")
+            binding.resultTextView.text = if (!isPlus) "-$resultText" else resultText
         }
     }
 
