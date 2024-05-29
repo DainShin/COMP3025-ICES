@@ -59,9 +59,6 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
-        /**
-         *
-         */
         // list : no index
         // array : index
         val operandButtons = arrayOf(
@@ -81,26 +78,26 @@ class MainActivity : AppCompatActivity() {
 
     private fun numberHandler(num: String) {
 
-        // if stack is empty and the number is not 0, add it to stack
-        // if there is a value in the stack already, add the value regardless
-        if(stack.isEmpty() && num != "0") {
-            stack.push(num)
-        }
-        else if(num == ".") {
-            if (!isDecimalClicked) {
-                if (stack.isEmpty()) {
-                    stack.push("0.")
-                } else {
-                    stack.push(stack.pop() + ".")
-                }
+        if (stack.isEmpty()) {
+            if (num == ".") {
+                stack.push("0.")
                 isDecimalClicked = true
-                binding.resultTextView.append(".")
+            } else {
+                stack.push(num)
             }
         }
-        else if(stack.isNotEmpty()) {
+        else if(stack.size == 1 && stack.peek() == "0" && num != "0" && num != ".") {
+            stack.pop()
             stack.push(num)
         }
-
+        else {
+            if (num == "." && !isDecimalClicked) {
+                stack.push(num)
+                isDecimalClicked = true
+            } else if (num != "." || (num == "." && !stack.peek().contains("."))) {
+                stack.push(num)
+            }
+        }
         updateResultView()
     }
 
