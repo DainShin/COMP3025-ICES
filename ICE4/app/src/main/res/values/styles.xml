@@ -11,11 +11,24 @@
         <item name="android:paddingTop">@dimen/p_y</item>
         <item name="android:paddingEnd">@dimen/p_x</item>
         <item name="android:paddingBottom">@dimen/p_y</item>
-<!--        <item name="android:textSize">@dimen/button_text_size</item>-->
+        <item name="android:textSize">@dimen/button_text</item>
     </style>
 
     <style name="light_grey_button" parent="calculator_button">
         <item name="android:backgroundTint">@color/light_grey</item>
         <item name="android:textColor">@color/black</item>
     </style>
+
+    <style name="orange_button" parent="calculator_button">
+        <item name="android:backgroundTint">@color/orange</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="dark_grey_button" parent="calculator_button">
+        <item name="android:backgroundTint">@color/dark_grey</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+
+
 </resources>

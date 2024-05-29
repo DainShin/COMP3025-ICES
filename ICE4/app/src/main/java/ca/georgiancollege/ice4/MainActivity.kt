@@ -138,11 +138,10 @@ class MainActivity : AppCompatActivity() {
             binding.resultTextView.text = "0"
         } else {
             val resultText = stack.joinToString("")
-            binding.resultTextView.text = if (!isPlus) "-$resultText" else resultText
+            binding.resultTextView.text =
+                if (!isPlus) "-$resultText" else resultText
         }
     }
-
-
 
 }
 
