@@ -82,15 +82,12 @@ class MainActivity : AppCompatActivity() {
 
     private fun numberHandler(num: String) {
 
-        // 스택이 비어있고 0이 아니면 넣기
+        // if stack is empty and the number is not 0, add it to stack
+        // if there is a value in the stack already, add the value regardless
         if(stack.isEmpty() && num != "0")
             stack.push(num)
         else if(stack.isNotEmpty())
             stack.push(num)
-
-        if(binding.resultTextView.text == "0" || stack.isEmpty()) {
-            binding.resultTextView.text = ""
-        }
 
         updateResultView()
     }
@@ -133,6 +130,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    // update result view screen
     private fun updateResultView() {
         if (stack.isEmpty()) {
             binding.resultTextView.text = "0"
@@ -142,19 +140,18 @@ class MainActivity : AppCompatActivity() {
                 if (!isPlus) "-$resultText" else resultText
         }
     }
-
 }
 
 /*
-Add a CalculatorButton Style to reduce attribute duplication for each Button.
-Add an inherited sytle for each type of button (light_grey_button, dark_grey_button, operator_button)
+Add a CalculatorButton Style to reduce attribute duplication for each Button. --> ok
+Add an inherited sytle for each type of button (light_grey_button, dark_grey_button, operator_button) --> ok
 
-Remove any superfluous attributes after the Style has been applied
-Create the layout-land folder and copy the activity_main layout into the new folder to support the landscape orientation
+Remove any superfluous attributes after the Style has been applied --> ok
+Create the layout-land folder and copy the activity_main layout into the new folder to support the landscape orientation --> ok
 
 Adjust your layout so that it works on a "Small" phone then test on your regular-sized phone
 
-Create functions that allow the number buttons (and decimal) to create an appropriate "Operand"
-Enable functionality for the Clear, Backspace and Plus / Minus buttons so that they match the functionality you see in other calculators
+Create functions that allow the number buttons (and decimal) to create an appropriate "Operand" --> ok
+Enable functionality for the Clear, Backspace and Plus / Minus buttons so that they match the functionality you see in other calculators --> ok
 *
 */
