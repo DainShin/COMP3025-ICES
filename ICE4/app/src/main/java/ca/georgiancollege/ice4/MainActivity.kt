@@ -65,16 +65,15 @@ class MainActivity : AppCompatActivity() {
         // list : no index
         // array : index
         val operandButtons = arrayOf(
-            binding.plusMinusButton, binding.decimalButton, binding.deleteButton, binding.clearButton
+            binding.plusMinusButton, binding.deleteButton, binding.clearButton
         )
 
         val numberButtons = arrayOf(
             binding.oneButton, binding.twoButton, binding.threeButton, binding.fourButton, binding.fiveButton,
-            binding.sixButton, binding.sevenButton, binding.eightButton, binding.nineButton, binding.zeroButton
+            binding.sixButton, binding.sevenButton, binding.eightButton, binding.nineButton, binding.zeroButton, binding.decimalButton
         )
 
 
-        //  +/- | decimal | delete
         operandButtons.forEach { it.setOnClickListener { operandHandler(it.tag.toString()) } }
         numberButtons.forEach { it.setOnClickListener {numberHandler(it.tag.toString()) }}
 
@@ -84,27 +83,29 @@ class MainActivity : AppCompatActivity() {
 
         // if stack is empty and the number is not 0, add it to stack
         // if there is a value in the stack already, add the value regardless
-        if(stack.isEmpty() && num != "0")
+        if(stack.isEmpty() && num != "0") {
             stack.push(num)
-        else if(stack.isNotEmpty())
+        }
+        else if(num == ".") {
+            if (!isDecimalClicked) {
+                if (stack.isEmpty()) {
+                    stack.push("0.")
+                } else {
+                    stack.push(stack.pop() + ".")
+                }
+                isDecimalClicked = true
+                binding.resultTextView.append(".")
+            }
+        }
+        else if(stack.isNotEmpty()) {
             stack.push(num)
+        }
 
         updateResultView()
     }
 
     private fun operandHandler(tag: String) {
         when (tag) {
-            "." -> {
-                if (!isDecimalClicked) {
-                    if (stack.isEmpty()) {
-                        stack.push("0.")
-                    } else {
-                        stack.push(stack.pop() + ".")
-                    }
-                    isDecimalClicked = true
-                    binding.resultTextView.append(".")
-                }
-            }
             "delete" -> {
                 if(binding.resultTextView.text == "0") {
                     isPlus = true
