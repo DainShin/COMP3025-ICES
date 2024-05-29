@@ -7,4 +7,5 @@
     <dimen name="m_y">10dp</dimen>
     <dimen name="m_x">10dp</dimen>
     <dimen name="result_textSize">60sp</dimen>
+    <dimen name="result_textSize_land">70sp</dimen>
 </resources>

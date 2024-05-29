@@ -17,13 +17,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.3">
+        app:layout_constraintVertical_bias="0.1">
 
 
         <TextView
             android:id="@+id/resultTextView"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/button_size"
+            android:layout_height="@dimen/result_textSize_land"
             android:layout_marginStart="@dimen/m_x"
             android:layout_marginEnd="@dimen/m_x"
             android:fontFamily="@font/fa_solid_900"
@@ -32,7 +32,7 @@
             android:paddingEnd="@dimen/p_y"
             android:text="0"
             android:textColor="@color/white"
-            android:textSize="@dimen/result_textSize" />
+            android:textSize="@dimen/result_textSize_land" />
     </LinearLayout>
 
     <LinearLayout
@@ -57,7 +57,7 @@
             android:paddingStart="@dimen/p_x"
             android:paddingEnd="@dimen/p_x"
             android:tag="clear"
-            android:text="c"
+            android:text="C"
             android:textColor="@color/black"
             android:textSize="@dimen/button_text" />
 
@@ -348,9 +348,9 @@
         <Button
             android:id="@+id/plusMinusButton"
             style="@style/light_grey_button"
+            android:backgroundTint="@color/light_grey"
             android:tag="plus_minus"
-            android:text="@string/plus_minus"
-            android:textSize="@dimen/button_text"/>
+            android:text="@string/plus_minus" />
 
         <Button
             android:id="@+id/zeroButton"
