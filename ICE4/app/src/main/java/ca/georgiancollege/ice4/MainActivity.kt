@@ -10,35 +10,12 @@ import androidx.core.view.WindowInsetsCompat
 import ca.georgiancollege.ice4.databinding.ActivityMainBinding
 import java.util.Stack
 
-/*
- * Follow along in class
- * Create your ICE4 project from your ICE3 project. Follow the copy / rename process.
- * Add a CalculatorButton Style to reduce attribute duplication for each Button.
- * Remove any superfluous attributes after the Style has been applied
- *
- * Create the layout-land folder and copy the activity_main layout into the new folder to support the landscape orientation
- *
- * Adjust your layout so that it works on a "Small" phone then test on your regular-sized phone
- *  => explore
- *
- * Create functions that allow the number buttons (and decimal) to create an appropriate "Operand"
- *  => numbers only. do not have to do it for operator
- *
- * Enable functionality for the Clear, Backspace and Plus / Minus buttons so that they match the functionality you see in other calculators
- *  => when tag == delete
-
- */
-
-
-
-
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
-    var isResultValue = false
+
     var isDecimalClicked = false
     var isPlus = true
-
     var stack = Stack<String>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -70,13 +47,14 @@ class MainActivity : AppCompatActivity() {
             binding.sixButton, binding.sevenButton, binding.eightButton, binding.nineButton, binding.zeroButton, binding.decimalButton
         )
 
-
         operandButtons.forEach { it.setOnClickListener { operandHandler(it.tag.toString()) } }
         numberButtons.forEach { it.setOnClickListener {numberHandler(it.tag.toString()) }}
-
     }
 
     private fun numberHandler(num: String) {
+        if(num == "." && isDecimalClicked) {
+            return
+        }
 
         if (stack.isEmpty()) {
             if (num == ".") {
@@ -107,6 +85,9 @@ class MainActivity : AppCompatActivity() {
                 if(binding.resultTextView.text == "0") {
                     isPlus = true
                 }
+                if(stack.peek() == ".") {
+                    isDecimalClicked = false
+                }
                stack.pop()
                 updateResultView()
             }
@@ -132,6 +113,7 @@ class MainActivity : AppCompatActivity() {
     private fun updateResultView() {
         if (stack.isEmpty()) {
             binding.resultTextView.text = "0"
+            isPlus = true
         } else {
             val resultText = stack.joinToString("")
             binding.resultTextView.text =
@@ -139,17 +121,3 @@ class MainActivity : AppCompatActivity() {
         }
     }
 }
-
-/*
-Add a CalculatorButton Style to reduce attribute duplication for each Button. --> ok
-Add an inherited sytle for each type of button (light_grey_button, dark_grey_button, operator_button) --> ok
-
-Remove any superfluous attributes after the Style has been applied --> ok
-Create the layout-land folder and copy the activity_main layout into the new folder to support the landscape orientation --> ok
-
-Adjust your layout so that it works on a "Small" phone then test on your regular-sized phone
-
-Create functions that allow the number buttons (and decimal) to create an appropriate "Operand" --> ok
-Enable functionality for the Clear, Backspace and Plus / Minus buttons so that they match the functionality you see in other calculators --> ok
-*
-*/

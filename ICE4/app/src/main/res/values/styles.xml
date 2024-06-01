@@ -19,7 +19,7 @@
         <item name="android:textColor">@color/black</item>
     </style>
 
-    <style name="orange_button" parent="calculator_button">
+    <style name="operator_button" parent="calculator_button">
         <item name="android:backgroundTint">@color/orange</item>
         <item name="android:textColor">@color/white</item>
     </style>

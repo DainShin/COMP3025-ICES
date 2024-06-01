@@ -65,7 +65,7 @@
 
         <Button
             android:id="@+id/divideButton"
-            style="@style/orange_button"
+            style="@style/operator_button"
             android:tag="divide"
             android:text="@string/divide" />
     </LinearLayout>
@@ -100,7 +100,7 @@
 
         <Button
             android:id="@+id/multiplyButton"
-            style="@style/orange_button"
+            style="@style/operator_button"
             android:tag="multiply"
             android:text="@string/multiply" />
     </LinearLayout>
@@ -135,7 +135,7 @@
 
         <Button
             android:id="@+id/minusButton"
-            style="@style/orange_button"
+            style="@style/operator_button"
             android:tag="minus"
             android:text="@string/minus" />
     </LinearLayout>
@@ -170,7 +170,7 @@
 
         <Button
             android:id="@+id/plusButton"
-            style="@style/orange_button"
+            style="@style/operator_button"
             android:tag="plus"
             android:text="@string/plus" />
     </LinearLayout>
@@ -205,7 +205,7 @@
 
         <Button
             android:id="@+id/equalsButton"
-            style="@style/orange_button"
+            style="@style/operator_button"
             android:tag="equals"
             android:text="@string/equals" />
     </LinearLayout>
