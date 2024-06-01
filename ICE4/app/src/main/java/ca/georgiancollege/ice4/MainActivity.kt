@@ -114,10 +114,12 @@ class MainActivity : AppCompatActivity() {
         if (stack.isEmpty()) {
             binding.resultTextView.text = "0"
             isPlus = true
+            isDecimalClicked = false
         } else {
             val resultText = stack.joinToString("")
             binding.resultTextView.text =
                 if (!isPlus) "-$resultText" else resultText
+            isDecimalClicked = stack.contains(".")
         }
     }
 }
