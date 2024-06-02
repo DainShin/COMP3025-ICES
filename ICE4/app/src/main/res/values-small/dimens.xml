@@ -5,4 +5,5 @@
     <dimen name="button_text">20sp</dimen>
     <dimen name="m_y">8dp</dimen>
     <dimen name="m_x">8dp</dimen>
+    <dimen name="result_textSize_land">60sp</dimen>
 </resources>
