@@ -51,7 +51,6 @@ class Calculator(dataBinding: ActivityMainBinding)
 
             }
             else -> {
-
                 if(binding.resultTextView.text == "0")
                 {
                     result = tag
@@ -69,6 +68,15 @@ class Calculator(dataBinding: ActivityMainBinding)
     //
     private fun operatorHandler(tag: String)
     {
-        binding.resultTextView.text = tag
+        when(tag)
+        {
+            "clear" -> clear()
+        }
+    }
+
+    private fun clear()
+    {
+        result = ""
+        binding.resultTextView.text = "0"
     }
 }
