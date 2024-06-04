@@ -1,13 +1,11 @@
-package ca.georgiancollege.ice4
+package ca.georgiancollege.ice5
 
 import android.os.Bundle
-import android.util.Log
-import android.widget.Button
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import ca.georgiancollege.ice4.databinding.ActivityMainBinding
+import ca.georgiancollege.ice5.databinding.ActivityMainBinding
 import java.util.Stack
 
 
@@ -34,8 +32,13 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
-        // list : no index
-        // array : index
+
+       buttonsReferences()
+
+    }
+
+    // buttons
+    private fun buttonsReferences() {
         val operandButtons = arrayOf(
             binding.plusMinusButton, binding.deleteButton, binding.clearButton
         )
@@ -48,6 +51,8 @@ class MainActivity : AppCompatActivity() {
         operandButtons.forEach { it.setOnClickListener { operandHandler(it.tag.toString()) } }
         numberButtons.forEach { it.setOnClickListener {numberHandler(it.tag.toString()) }}
     }
+
+
 
     private fun numberHandler(num: String) {
         if(num == "." && isDecimalClicked) {
