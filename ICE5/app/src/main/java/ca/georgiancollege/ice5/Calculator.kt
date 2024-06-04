@@ -33,27 +33,35 @@ class Calculator(dataBinding: ActivityMainBinding)
     }
 
     //
-    private fun operandHandler(tag: String) = when(tag)
-    {
-        "." -> {
+    private fun operandHandler(tag: String) {
+        when(tag)
+        {
+            "." -> {
+                if(!binding.resultTextView.text.contains("."))
+                {
+                    result += if(result.isEmpty()) "0." else "."
 
-        }
-        "delete" -> {
-
-        }
-        "plus_minus" ->  {
-
-        }
-        else -> {
-
-            if(binding.resultTextView.text == "0")
-            {
-                binding.resultTextView.text = tag
+                    binding.resultTextView.text = result
+                }
             }
-            else
-            {
-                result += tag
-                binding.resultTextView.text = result
+            "delete" -> {
+
+            }
+            "plus_minus" ->  {
+
+            }
+            else -> {
+
+                if(binding.resultTextView.text == "0")
+                {
+                    result = tag
+                    binding.resultTextView.text = result
+                }
+                else
+                {
+                    result += tag
+                    binding.resultTextView.text = result
+                }
             }
         }
     }
