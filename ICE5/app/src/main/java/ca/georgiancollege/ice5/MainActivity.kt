@@ -12,10 +12,6 @@ import java.util.Stack
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
 
-    var isDecimalClicked = false
-    var isPlus = true
-    var stack = Stack<String>()
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -32,7 +28,9 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
-        val calculator = Calculator(binding);
+        val calculator = Calculator(binding)
 
     }
 }
+
+

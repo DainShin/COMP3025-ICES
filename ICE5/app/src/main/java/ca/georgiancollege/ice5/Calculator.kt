@@ -3,7 +3,7 @@ package ca.georgiancollege.ice5
 import android.util.Log
 import ca.georgiancollege.ice5.databinding.ActivityMainBinding
 
-// constructor
+
 class Calculator(dataBinding: ActivityMainBinding)
 {
     private var binding: ActivityMainBinding = dataBinding
@@ -33,26 +33,26 @@ class Calculator(dataBinding: ActivityMainBinding)
         operatorButtons.forEach { it.setOnClickListener { operatorHandler(it.tag as String) } }
     }
 
-    //
     private fun operandHandler(tag: String) {
         when(tag)
         {
             "." -> {
                 if(!binding.resultTextView.text.contains("."))
                 {
-                    result += if(result.isEmpty() || result == "-") "0." else "."
+                    result += if(result.isEmpty()) "0." else "."
+
                     binding.resultTextView.text = result
                 }
             }
             "delete" -> {
                 result = result.dropLast(1)
-                binding.resultTextView.text = if(result.isEmpty()) "0" else result
 
+                binding.resultTextView.text = if(result.isEmpty() || result=="-") "0" else result
             }
-            "plus_minus" ->  {
+            "plus_minus" -> {
                 if(result.startsWith("-"))
                 {
-                   result = result.substring(1)
+                    result = result.substring(1)
                 }
                 else
                 {
@@ -61,15 +61,16 @@ class Calculator(dataBinding: ActivityMainBinding)
                         result = "-".plus(result)
                     }
                 }
+                binding.resultTextView.text = result
             }
             else -> {
+
                 if(binding.resultTextView.text == "0")
                 {
                     result = tag
                 }
                 else
                 {
-                    Log.i("plus_minus", result)
                     result += tag
                 }
                 binding.resultTextView.text = result
@@ -77,10 +78,9 @@ class Calculator(dataBinding: ActivityMainBinding)
         }
     }
 
-    //
     private fun operatorHandler(tag: String)
     {
-        when(tag)
+        when (tag)
         {
             "clear" -> clear()
         }
