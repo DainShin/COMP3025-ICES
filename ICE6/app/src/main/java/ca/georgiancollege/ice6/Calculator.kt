@@ -77,6 +77,11 @@ class Calculator(dataBinding: ActivityMainBinding)
         }
     }
 
+    /**
+     * This function performs all the computation for the Calculator
+     *
+     * @param {tag} [String]
+     */
     private fun operatorHandler(tag: String)
     {
         when (tag)
