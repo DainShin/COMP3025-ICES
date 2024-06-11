@@ -40,7 +40,7 @@ android {
 }
 
 dependencies {
-
+    implementation("com.squareup.moshi:moshi-kotlin:1.15.1")
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
