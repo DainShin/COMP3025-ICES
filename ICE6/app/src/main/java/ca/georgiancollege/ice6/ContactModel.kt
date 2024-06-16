@@ -12,6 +12,6 @@ data class ContactModel(
 {
     override fun toString(): String
     {
-        return """Full Name: $fullName, Contact Number: $contactNumber, Address: $emailAddress"""
+        return """Full Name: $fullName, Contact Number: $contactNumber, Email Address: $emailAddress"""
     }
 }

@@ -35,12 +35,13 @@ class MainActivity : AppCompatActivity() {
 
         val calculator = Calculator(binding)
 
+        // discuss how the json works in here in your video
         for (contact in DataManager.instance.deserializeJSON(this)!!)
         {
             Log.i("contacts", contact.toString())
         }
-    }
 
+    }
 }
 
 

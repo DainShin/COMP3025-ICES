@@ -3,13 +3,16 @@ package ca.georgiancollege.ice6
 import ca.georgiancollege.ice6.databinding.ActivityMainBinding
 
 
-class Calculator(dataBinding: ActivityMainBinding)
-{
+class Calculator(dataBinding: ActivityMainBinding) {
     private var binding: ActivityMainBinding = dataBinding
     private var result: String
+    private var currentOperand: String
+    private var currentOperator: String
 
     init {
         result = ""
+        currentOperand = ""
+        currentOperator = ""
         createButtonsReferences()
     }
 
@@ -33,43 +36,37 @@ class Calculator(dataBinding: ActivityMainBinding)
     }
 
     private fun operandHandler(tag: String) {
-        when(tag)
-        {
+        when (tag) {
             "." -> {
-                if(!binding.resultTextView.text.contains("."))
-                {
-                    result += if(result.isEmpty()) "0." else "."
+                if (!binding.resultTextView.text.contains(".")) {
+                    result += if (result.isEmpty()) "0." else "."
 
                     binding.resultTextView.text = result
                 }
             }
+
             "delete" -> {
                 result = result.dropLast(1)
 
-                binding.resultTextView.text = if(result.isEmpty() || result=="-") "0" else result
+                binding.resultTextView.text = if (result.isEmpty() || result == "-") "0" else result
             }
+
             "plus_minus" -> {
-                if(result.startsWith("-"))
-                {
+                if (result.startsWith("-")) {
                     result = result.substring(1)
-                }
-                else
-                {
-                    if(result.isNotEmpty())
-                    {
+                } else {
+                    if (result.isNotEmpty()) {
                         result = "-".plus(result)
                     }
                 }
                 binding.resultTextView.text = result
             }
+
             else -> {
 
-                if(binding.resultTextView.text == "0")
-                {
+                if (binding.resultTextView.text == "0") {
                     result = tag
-                }
-                else
-                {
+                } else {
                     result += tag
                 }
                 binding.resultTextView.text = result
@@ -82,23 +79,111 @@ class Calculator(dataBinding: ActivityMainBinding)
      *
      * @param {tag} [String]
      */
-    private fun operatorHandler(tag: String)
-    {
-        when (tag)
-        {
-            "clear" -> clear()
+    private fun operatorHandler(tag: String) {
+        if (tag != "clear") {
+            if (currentOperand.isNotEmpty()) {
+
+
+                when (currentOperator) {
+                    "plus" -> add()
+                    "minus" -> subtract()
+                    "divide" -> divide()
+                    "multiply" -> multiply()
+                    "percent" -> percentage()
+                    "equals" -> equals()
+                }
+            }
+                currentOperand = binding.resultTextView.text.toString()
+                result = ""
+                //binding.resultTextView.text = ""
+
+            currentOperator = tag
+        } else {// when the clear button is clicked
+            clear()
         }
+
     }
 
-    private fun clear()
+    private fun equals() {
+       binding.resultTextView.text = result
+    }
+
+    private fun add() {
+        if (currentOperand.contains(".") || result.contains(".")) {
+            result = ((currentOperand.toFloat()) + (result.toFloat())).toString()
+        } else {
+            result = ((currentOperand.toInt()) + (result.toInt())).toString()
+        }
+
+        // remove decimal if the result is int
+        if (result.endsWith(".0")) {
+            result = result.substring(0, result.length - 2)
+        }
+        binding.resultTextView.text = result
+    }
+
+    private fun subtract() {
+        if (currentOperand.contains(".") || result.contains(".")) {
+            // currentOperand = old, result= new
+            result = ((currentOperand.toFloat()) - (result.toFloat())).toString()
+        } else {
+            result = ((currentOperand.toInt()) - (result.toInt())).toString()
+        }
+
+        if (result.endsWith(".0")) {
+            result = result.substring(0, result.length - 2)
+        }
+        binding.resultTextView.text = result
+    }
+
+    private fun divide()
     {
+        // currentOperand = old, result= new
+        result = ((currentOperand.toFloat()) / (result.toFloat())).toString()
+
+        if (result.endsWith(".0")) {
+            result = result.substring(0, result.length - 2)
+        }
+
+        binding.resultTextView.text = result
+    }
+
+    private fun multiply()
+    {
+        if (currentOperand.contains(".") || result.contains(".")) {
+            // currentOperand = old, result= new
+            result = ((currentOperand.toFloat()) * (result.toFloat())).toString()
+        } else {
+            result = ((currentOperand.toInt()) * (result.toInt())).toString()
+        }
+
+        if (result.endsWith(".0")) {
+            result = result.substring(0, result.length - 2)
+        }
+        binding.resultTextView.text = result
+        currentOperand = ""
+    }
+
+    private fun percentage()
+    {
+        var result = binding.resultTextView.toString().toFloat() * 0.01
+
+    }
+
+    private fun clear() {
         result = ""
         binding.resultTextView.text = "0"
+        currentOperand = ""
+        currentOperator = ""
     }
 }
 
 
 /*
     2 stacks..
+    trees
+    string manipulation """ """"
+    collections
+    Lists..
 
 * */
