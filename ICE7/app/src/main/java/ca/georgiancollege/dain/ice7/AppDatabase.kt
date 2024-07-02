@@ -14,7 +14,7 @@ abstract class AppDatabase : RoomDatabase()
 
     companion object
     {
-        // Volatiel annotaion ensures that the instance is always up-to-date and thread-safe
+        // Volatile annotation ensures that the instance is always up-to-date and thread-safe
         @Volatile
         private var m_instance: AppDatabase? = null
 
@@ -31,7 +31,6 @@ abstract class AppDatabase : RoomDatabase()
                     context.applicationContext,
                     AppDatabase::class.java,
                     "media_database" // name of the database file
-
                 ). build()
 
                 // Assign the newly created databawe instance to INSTANCE
