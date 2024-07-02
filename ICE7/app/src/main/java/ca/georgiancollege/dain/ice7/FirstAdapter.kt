@@ -9,21 +9,24 @@ import ca.georgiancollege.dain.ice7.databinding.TextRowItemBinding
 class FirstAdapter(private val dataSet: Array<TVShow>) :
     RecyclerView.Adapter<FirstAdapter.ViewHolder>()
 {
-     // inner class ViewHolder
+
+    // inner class ViewHolder
     class ViewHolder(val binding: TextRowItemBinding) : RecyclerView.ViewHolder(binding.root)
 
-    // Inflates the tex_row_item layout and returns the ViewHolder (custom table view cell)
-    override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): ViewHolder {
+    // Inflates the text_row_item layout and returns the ViewHolder (custom table view cell)
+    override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): ViewHolder
+    {
         // Inflate the layout with view binding
         val binding = TextRowItemBinding.inflate(LayoutInflater.from(viewGroup.context), viewGroup, false)
         return ViewHolder(binding)
     }
 
-    // Binds the data to the view (text_row_item)
-    override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
+    // Binds the data to the view
+    override fun onBindViewHolder(viewHolder: ViewHolder, position: Int)
+    {
         // Use view binding to set the text
         viewHolder.binding.title.text = dataSet[position].title
-        viewHolder.binding.subTitle.text = dataSet[position].subTitle
+        viewHolder.binding.genre.text = dataSet[position].genre
     }
 
     // Returns the size of the data set

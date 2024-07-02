@@ -22,7 +22,6 @@ android {
         viewBinding = true
     }
 
-
     buildTypes {
         release {
             isMinifyEnabled = false
@@ -42,7 +41,7 @@ android {
 }
 
 dependencies {
-    // ui frame works
+    // UI frameworks
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
@@ -50,16 +49,11 @@ dependencies {
     implementation(libs.androidx.constraintlayout)
 
     // room implementations
-//    implementation(libs.androidx.core.room.common)
-//    implementation(libs.androidx.room.ktx)
-//    implementation(libs.androidx.room.runtime)
-//    kapt(libs.androidx.room.complier)
-
-    //Room
     implementation(libs.androidx.room.common)
     implementation(libs.androidx.room.runtime)
     implementation(libs.androidx.room.ktx)
-    kapt(libs.androidx.room.complier)
+    kapt(libs.androidx.room.compiler)
+
 
     // testing frameworks
     testImplementation(libs.junit)
