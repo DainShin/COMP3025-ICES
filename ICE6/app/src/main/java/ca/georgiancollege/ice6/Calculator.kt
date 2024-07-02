@@ -46,7 +46,7 @@ class Calculator(dataBinding: ActivityMainBinding) {
             }
 
             "delete" -> {
-                result = result.dropLast(1)
+                result = result.dropLast(1) // dropLast: 뒤에서부터 n개의 문자 제거
 
                 binding.resultTextView.text = if (result.isEmpty() || result == "-") "0" else result
             }
