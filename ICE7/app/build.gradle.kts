@@ -56,9 +56,9 @@ dependencies {
 //    kapt(libs.androidx.room.complier)
 
     //Room
+    implementation(libs.androidx.room.common)
     implementation(libs.androidx.room.runtime)
     implementation(libs.androidx.room.ktx)
-    implementation(libs.androidx.room.common)
     kapt(libs.androidx.room.complier)
 
     // testing frameworks
