@@ -19,7 +19,7 @@ class DataManager private constructor()
         @Volatile
         private var m_instance: DataManager? = null
 
-        fun instance(context: Context): DataManager
+        fun instance(): DataManager
         {
             if(m_instance == null)
             {

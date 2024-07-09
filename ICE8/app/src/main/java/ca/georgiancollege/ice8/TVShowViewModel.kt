@@ -8,6 +8,7 @@ class TVShowViewModel : ViewModel()
     // create an alias for the DataManager singleton
     private val dataManager = DataManager.instance()
 
+    // LiveData to holde the list of TVShows
     private val m_tvShows = MutableLiveData<List<TVShow>>()
     val tvShows: LiveData<List<TVShow>> get() = m_tvShows
 
