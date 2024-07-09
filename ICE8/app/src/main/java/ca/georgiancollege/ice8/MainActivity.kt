@@ -2,15 +2,19 @@ package ca.georgiancollege.ice8
 
 import android.content.Intent
 import android.os.Bundle
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import ca.georgiancollege.ice8.databinding.ActivityMainBinding
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.ktx.Firebase
 import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity()
 {
     private lateinit var binding: ActivityMainBinding
+    private val viewModel: TVShowViewModel by viewModels()
 
     private lateinit var dataManager: DataManager
 
@@ -27,13 +31,22 @@ class MainActivity : AppCompatActivity()
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        dataManager = DataManager.instance(this)
+        // Initialize Firestore and DataManager
+        FirebaseFirestore.setLoggingEnabled(true)
+        dataManager = DataManager.instance()
 
         binding.firstRecyclerView.layoutManager = LinearLayoutManager(this)
         binding.firstRecyclerView.adapter = adapter
 
-        loadTVShows()
+        viewModel.tvShows.observe(this) {tvShows ->
+            adapter.submitList(tvShows)
+        }
 
+        // Load all TV Shows from the database when the app starts
+        viewModel.loadAllTVShows()
+
+
+        // TODO: replace the addButton with a FAB
         binding.addButton.setOnClickListener {
             val intent = Intent(this, DetailsActivity::class.java)
             startActivity(intent)
@@ -43,14 +56,7 @@ class MainActivity : AppCompatActivity()
     override fun onResume()
     {
         super.onResume()
-        loadTVShows()
+        viewModel.loadAllTVShows()
     }
 
-    private fun loadTVShows()
-    {
-        lifecycleScope.launch {
-            val tvShows = dataManager.getAllTVShows()
-            adapter.submitList(tvShows)
-        }
-    }
 }
