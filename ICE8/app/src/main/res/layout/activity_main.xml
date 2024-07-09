@@ -46,12 +46,14 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="30dp"
         android:layout_marginBottom="60dp"
+        android:backgroundTint="@color/black"
         android:clickable="true"
         android:focusable="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@android:drawable/ic_menu_add"
+        app:srcCompat="@drawable/ic_add"
         tools:ignore="SpeakableTextPresentCheck"
-        android:contentDescription="Add a Movie" />
+        android:contentDescription="Add a TV Show"
+        style="@style/CustomFAB"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
