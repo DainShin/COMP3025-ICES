@@ -5,6 +5,7 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 
+// This is for creating the database file on the device. We only make this once --> singleton
 // This annotation marks the class as a Room Database
 @Database(entities = [TVShow::class], version = 1, exportSchema = false)
 abstract class AppDatabase : RoomDatabase()
@@ -12,6 +13,7 @@ abstract class AppDatabase : RoomDatabase()
     // This method returns an instance of the TVShowDao interface
     abstract fun tvShowDao(): TVShowDao
 
+    // abstract singleton
     companion object
     {
         // Volatile annotation ensures that the instance is always up-to-date and thread-safe

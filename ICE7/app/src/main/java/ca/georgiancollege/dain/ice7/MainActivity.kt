@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity()
         val intent = Intent(this, DetailsActivity::class.java).apply {
             putExtra("tvShowId", tvShow.id)
         }
-        startActivity(intent)
+        startActivity(intent) // startActivity: Using for starting from the current Activity to a new Activity
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -29,8 +29,9 @@ class MainActivity : AppCompatActivity()
 
         dataManager = DataManager.instance(this)
 
-        binding.firstRecyclerView.layoutManager = LinearLayoutManager(this)
-        binding.firstRecyclerView.adapter = adapter
+        binding.firstRecyclerView.layoutManager = LinearLayoutManager(this)  // layoutManager: Managing the layout of the RecyclerView
+                                                                                     // this: context(MainActivity)
+        binding.firstRecyclerView.adapter = adapter  // adapter: TVShowListAdapter instance
 
         loadTVShows()
 
@@ -38,11 +39,12 @@ class MainActivity : AppCompatActivity()
             val intent = Intent(this, DetailsActivity::class.java)
             startActivity(intent)
         }
+
     }
 
     override fun onResume()
     {
-        super.onResume()
+        super.onResume() // onResume method in the AppCompatActivity Class
         loadTVShows()
     }
 

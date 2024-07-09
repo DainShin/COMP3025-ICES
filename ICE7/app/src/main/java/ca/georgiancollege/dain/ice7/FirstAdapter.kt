@@ -5,6 +5,10 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import ca.georgiancollege.dain.ice7.databinding.TextRowItemBinding
 
+// This class is taking the TVShow Array and assign the data in the view
+// This is a kind of testing class to test the RecyclerView. We are going to use TVShowListAdapter
+// All the functions overrides the RecyclerView class
+
 // A control class and a wrapper for the first RecyclerView
 class FirstAdapter(private val dataSet: Array<TVShow>) :
     RecyclerView.Adapter<FirstAdapter.ViewHolder>()

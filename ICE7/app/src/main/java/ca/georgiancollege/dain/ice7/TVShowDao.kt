@@ -2,7 +2,7 @@ package ca.georgiancollege.dain.ice7
 
 import androidx.room.*
 
-
+// Dao is a wrapper for basic CRUD functions
 @Dao
 interface TVShowDao
 {
