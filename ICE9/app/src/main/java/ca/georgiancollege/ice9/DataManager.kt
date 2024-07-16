@@ -32,7 +32,7 @@ class DataManager private constructor()
         }
     }
 
-    //  CRUD functionalities
+    // TVShow CRUD functionalities
     suspend fun insert(tvShow: TVShow) {
         try {
             db.collection("tvShows").document(tvShow.id).set(tvShow).await()
@@ -81,4 +81,27 @@ class DataManager private constructor()
             null
         }
     }
+
+    // User CRUD Operations
+    suspend fun insertUser(user: User) {
+        try {
+            db.collection("users").document(user.id).set(user).await()
+        }
+        catch (e: Exception) {
+            Log.e(TAG, "Error inserting User: ${e.message}", e)
+        }
+    }
+
+    suspend fun getUserById(id: String) : User? {
+        return try {
+            val result = db.collection("users").document(id).get().await()
+            result?.toObject(User::class.java)
+        }
+        catch(e:Exception) {
+            Log.e(TAG, "Error getting User by ID: ${e.message}", e)
+            null
+        }
+    }
+
+
 }
