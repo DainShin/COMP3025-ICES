@@ -3,16 +3,13 @@ package ca.georgiancollege.ice9
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
-
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
-
-import ca.georgiancollege.ice9.databinding.ActivityLoginBinding
 import ca.georgiancollege.ice9.databinding.ActivityRegisterBinding
 import com.google.firebase.auth.FirebaseAuth
 
-class RegisterActivity : AppCompatActivity() {
-
+class RegisterActivity : AppCompatActivity()
+{
     private lateinit var binding: ActivityRegisterBinding
     private lateinit var auth: FirebaseAuth
     private lateinit var viewModel: TVShowViewModel
@@ -20,10 +17,10 @@ class RegisterActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?)
     {
         super.onCreate(savedInstanceState)
-        binding = ActivityRegisterBinding.inflate(layoutInflater);
+        binding = ActivityRegisterBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // initialize firebase Auth
+        // Initialize Firebase Auth
         auth = FirebaseAuth.getInstance()
         viewModel = ViewModelProvider(this).get(TVShowViewModel::class.java)
 
@@ -34,12 +31,16 @@ class RegisterActivity : AppCompatActivity() {
             val password = binding.PasswordText.text.toString()
             val confirmPassword = binding.ConfirmPassword.text.toString()
 
-            if(firstName.isNotEmpty() && lastName.isNotEmpty() && email.isNotEmpty() && password.isNotEmpty() && confirmPassword.isNotEmpty())
+            if(firstName.isNotEmpty() &&
+                lastName.isNotEmpty() &&
+                email.isNotEmpty() &&
+                password.isNotEmpty() &&
+                confirmPassword.isNotEmpty())
             {
-                if (password == confirmPassword)
+                if(password == confirmPassword)
                 {
-                    auth.createUserWithEmailAndPassword(email,password)
-                        .addOnCompleteListener(this) { task ->
+                    auth.createUserWithEmailAndPassword(email, password)
+                        .addOnCompleteListener(this) { task->
                             if(task.isSuccessful)
                             {
                                 val user = auth.currentUser
@@ -48,30 +49,29 @@ class RegisterActivity : AppCompatActivity() {
                                     viewModel.insertUser(newUser)
                                 }
 
-                                // sign in
+                                // Sign in
                                 startActivity(Intent(this, LoginActivity::class.java))
                                 finish()
                             }
                             else
                             {
-                                Toast.makeText(this,"Registration Failed", Toast.LENGTH_SHORT).show()
+                                Toast.makeText(this, "Registration Failed", Toast.LENGTH_SHORT).show()
                             }
                         }
                 }
                 else
                 {
-                    Toast.makeText(this,"Passwords do not match ", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Passwords do not match", Toast.LENGTH_SHORT).show()
                 }
             }
             else
             {
-                Toast.makeText(this,"Please fill in all fileds", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Please fill in all fields", Toast.LENGTH_SHORT).show()
             }
         }
 
         binding.CancelButton.setOnClickListener {
             finish()
         }
-
     }
 }
