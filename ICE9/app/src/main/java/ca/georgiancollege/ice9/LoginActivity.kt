@@ -16,7 +16,6 @@ class LoginActivity : AppCompatActivity()
     private lateinit var auth: FirebaseAuth
     private lateinit var viewModel: TVShowViewModel
 
-
     override fun onCreate(savedInstanceState: Bundle?)
     {
         super.onCreate(savedInstanceState)

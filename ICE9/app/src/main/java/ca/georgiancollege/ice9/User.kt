@@ -10,3 +10,6 @@ data class User(
     var lastName: String = "",
     var email: String = ""
 )
+
+// isLogin
+// simple timer -> 1 min -> automatically logout
