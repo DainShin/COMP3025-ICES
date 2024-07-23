@@ -1,6 +1,9 @@
 package ca.georgiancollege.ice9
 
+import android.util.Log
 import androidx.lifecycle.*
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.ListenerRegistration
 import kotlinx.coroutines.launch
 
 class TVShowViewModel : ViewModel()
@@ -20,11 +23,30 @@ class TVShowViewModel : ViewModel()
     private val m_user = MutableLiveData<User?>()
     val user: LiveData<User?> get() = m_user
 
+    // Firestore instance
+    private val firestore = FirebaseFirestore.getInstance()
+    private var tvShowsListener: ListenerRegistration? = null
+
     // Function to load all TVShows from the DataManager
     fun loadAllTVShows() {
-        viewModelScope.launch {
-            m_tvShows.value = dataManager.getAllTVShows()
-        }
+        // Remove the previous listener if it exists
+        tvShowsListener?.remove()
+
+        tvShowsListener = firestore.collection("tvShows")
+            .addSnapshotListener { snapshot, e ->
+                if (e != null) {
+                    Log.w("TVShowViewModel", "Listen failed.", e)
+                    return@addSnapshotListener
+                }
+
+                if (snapshot != null && !snapshot.isEmpty) {
+                    val tvShowList = snapshot.toObjects(TVShow::class.java)
+                    m_tvShows.postValue(tvShowList)
+                } else {
+                    Log.d("TVShowViewModel", "Current data: null")
+                    m_tvShows.postValue(emptyList())
+                }
+            }
     }
 
     // Function to load a specific TVShow by ID from the DataManager
