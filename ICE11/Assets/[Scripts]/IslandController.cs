@@ -24,7 +24,7 @@ public class IslandController : MonoBehaviour
     void ResetGameObject()
     {
         var randomXPostion = Random.Range(minHorizontal, maxHorizontal);   
-        transform.position = new Vector3(0.0f, maxVertical, 0.0f);
+        transform.position = new Vector3(randomXPostion, maxVertical, 0.0f);
     }
 
     void Move()
