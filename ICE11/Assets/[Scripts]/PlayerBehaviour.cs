@@ -29,7 +29,6 @@ public class PlayerBehaviour : MonoBehaviour
 
             var horizontalPosition = Camera.main.ScreenToWorldPoint(new Vector3(x, 0.0f, 0.0f)).x;         
 
-            //var x = Input.GetAxisRaw("Horizontal") * horizonatalSpeed * Time.deltaTime;
             transform.position += new Vector3(horizontalPosition, verticalPosition, 0.0f);
         }
     }
