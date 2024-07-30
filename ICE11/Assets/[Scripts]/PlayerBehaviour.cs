@@ -5,8 +5,11 @@ public class PlayerBehaviour : MonoBehaviour
     
     public float max;
     public float min;
-    public float horizonatalSpeed;
+    public float horizontalSpeed;
     public float verticalPosition;
+
+    public AudioSource yaySound;
+    public AudioSource thunderSound;
 
     private void Start()
     {
@@ -42,6 +45,18 @@ public class PlayerBehaviour : MonoBehaviour
         else if(transform.position.x >= max) 
         {
             transform.position = new Vector3(max, verticalPosition, 0.0f);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.gameObject.CompareTag("Island"))
+        {
+            yaySound.Play();
+        } 
+        else if(other.gameObject.CompareTag("Cloud"))
+        {
+            thunderSound.Play();
         }
     }
 }
