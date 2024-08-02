@@ -336,6 +336,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 3103602111851946539, guid: 4f9da16cfa27bfe44b20047408e5ef55, type: 3}
+      propertyPath: boundary.max
+      value: 5.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3103602111851946539, guid: 4f9da16cfa27bfe44b20047408e5ef55, type: 3}
+      propertyPath: boundary.min
+      value: -5.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3103602111851946539, guid: 4f9da16cfa27bfe44b20047408e5ef55, type: 3}
+      propertyPath: verticalSpeed
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4748026899427310670, guid: 4f9da16cfa27bfe44b20047408e5ef55, type: 3}
       propertyPath: Loop
       value: 0
