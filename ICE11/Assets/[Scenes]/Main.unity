@@ -222,9 +222,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cloud (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 6434100817824204927, guid: a1e65e46bd6549f44843242eb93d0362, type: 3}
+      propertyPath: boundary.max
+      value: 5.63
+      objectReference: {fileID: 0}
+    - target: {fileID: 6434100817824204927, guid: a1e65e46bd6549f44843242eb93d0362, type: 3}
+      propertyPath: boundary.min
+      value: -5.63
+      objectReference: {fileID: 0}
     - target: {fileID: 7038636380359001409, guid: a1e65e46bd6549f44843242eb93d0362, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7038636380359001409, guid: a1e65e46bd6549f44843242eb93d0362, type: 3}
       propertyPath: m_LocalPosition.y
@@ -279,9 +287,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cloud (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6434100817824204927, guid: a1e65e46bd6549f44843242eb93d0362, type: 3}
+      propertyPath: boundary.max
+      value: 5.63
+      objectReference: {fileID: 0}
+    - target: {fileID: 6434100817824204927, guid: a1e65e46bd6549f44843242eb93d0362, type: 3}
+      propertyPath: boundary.min
+      value: -5.63
+      objectReference: {fileID: 0}
     - target: {fileID: 7038636380359001409, guid: a1e65e46bd6549f44843242eb93d0362, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7038636380359001409, guid: a1e65e46bd6549f44843242eb93d0362, type: 3}
       propertyPath: m_LocalPosition.y
@@ -338,11 +354,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3103602111851946539, guid: 4f9da16cfa27bfe44b20047408e5ef55, type: 3}
       propertyPath: boundary.max
-      value: 5.6
+      value: 1.68
       objectReference: {fileID: 0}
     - target: {fileID: 3103602111851946539, guid: 4f9da16cfa27bfe44b20047408e5ef55, type: 3}
       propertyPath: boundary.min
-      value: -5.6
+      value: -1.68
       objectReference: {fileID: 0}
     - target: {fileID: 3103602111851946539, guid: 4f9da16cfa27bfe44b20047408e5ef55, type: 3}
       propertyPath: verticalSpeed
@@ -354,11 +370,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7818272460869219408, guid: 4f9da16cfa27bfe44b20047408e5ef55, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.06
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7818272460869219408, guid: 4f9da16cfa27bfe44b20047408e5ef55, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.13
+      value: -4
       objectReference: {fileID: 0}
     - target: {fileID: 7818272460869219408, guid: 4f9da16cfa27bfe44b20047408e5ef55, type: 3}
       propertyPath: m_LocalPosition.z
@@ -496,7 +512,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7038636380359001409, guid: a1e65e46bd6549f44843242eb93d0362, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7038636380359001409, guid: a1e65e46bd6549f44843242eb93d0362, type: 3}
       propertyPath: m_LocalPosition.y
