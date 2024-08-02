@@ -4,7 +4,6 @@ public class CloudController : MonoBehaviour
 {
     [Header("Movement Properties")]
     public float minVertical;
-
     public float minHorizontal;
     public float maxHorizontal;
 

@@ -13,7 +13,7 @@ public class PlayerBehaviour : MonoBehaviour
 
     private void Start()
     {
-        transform.position = new Vector3(0.0F, verticalPosition, 0.0f);
+        transform.position = new Vector3(0.0f, verticalPosition, 0.0f);
     }
 
 
@@ -30,9 +30,9 @@ public class PlayerBehaviour : MonoBehaviour
             // gets input touches from screen space in pixles
             var x = Input.touches[0].position.x;
 
-            var horizontalPosition = Camera.main.ScreenToWorldPoint(new Vector3(x, 0.0f, 0.0f)).x;         
+            var horizontalPosition = Camera.main.ScreenToWorldPoint(new Vector3(x, 0.0f, 0.0f)).x;
 
-            transform.position += new Vector3(horizontalPosition, verticalPosition, 0.0f);
+            transform.position = new Vector3(horizontalPosition, verticalPosition, 0.0f);
         }
     }
 
