@@ -474,6 +474,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cloud
       objectReference: {fileID: 0}
+    - target: {fileID: 6434100817824204927, guid: a1e65e46bd6549f44843242eb93d0362, type: 3}
+      propertyPath: boundary.max
+      value: 5.63
+      objectReference: {fileID: 0}
+    - target: {fileID: 6434100817824204927, guid: a1e65e46bd6549f44843242eb93d0362, type: 3}
+      propertyPath: boundary.min
+      value: -5.63
+      objectReference: {fileID: 0}
     - target: {fileID: 7038636380359001409, guid: a1e65e46bd6549f44843242eb93d0362, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.6
