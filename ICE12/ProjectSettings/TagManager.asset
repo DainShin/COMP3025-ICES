@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 3
+  tags:
+  - Ocean
+  - Island
+  - Cloud
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Ocean
+    uniqueID: 2066266687
+    locked: 0
+  - name: Island
+    uniqueID: 904114171
+    locked: 0
+  - name: Player
+    uniqueID: 1233538975
+    locked: 0
+  - name: Cloud
+    uniqueID: 3587927233
+    locked: 0
+  m_RenderingLayers:
+  - Default
