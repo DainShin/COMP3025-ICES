@@ -8,8 +8,12 @@ public class PlayerBehaviour : BaseController
     public AudioSource yaySound;
     public AudioSource thunderSound;
 
+    public GameController gameController;
+
     public override void Start()
     {
+        gameController = GameObject.Find("GameController").GetComponent<GameController>();
+
         transform.position = new Vector3(0.0f, verticalPosition, 0.0f);
     }
 
@@ -48,10 +52,12 @@ public class PlayerBehaviour : BaseController
         if(other.gameObject.CompareTag("Island"))
         {
             yaySound.Play();
+            gameController.AddScore(100);
         } 
         else if(other.gameObject.CompareTag("Cloud"))
         {
             thunderSound.Play();
+            gameController.LoseLife();
         }
     }
 }
