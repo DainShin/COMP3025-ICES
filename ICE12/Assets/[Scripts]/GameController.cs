@@ -4,17 +4,17 @@ using UnityEngine;
 [System.Serializable]
 public class GameController : MonoBehaviour
 {
-    [Header("Scorebaord")]
+    [Header("Scoreboard")]
     public TMP_Text livesLabel;
     public TMP_Text scoreLabel;
 
     private int m_score;
     private int m_lives;
-    
+
     void Start()
     {
         SetScoreLabel(0);
-        SetLiveLabel(5);
+        SetLivesLabel(5);
     }
 
     public void AddScore(int score)
@@ -25,13 +25,13 @@ public class GameController : MonoBehaviour
 
     public void LoseLife()
     {
-        m_lives --;
-        SetLiveLabel(m_lives);
+        m_lives--;
+        SetLivesLabel(m_lives);
     }
-    
-    public void SetLiveLabel(int lives)
+
+    public void SetLivesLabel(int lives)
     {
-        livesLabel.text = "Live: " + lives;
+        livesLabel.text = "Lives: " + lives;
         m_lives = lives;
     }
 
@@ -50,6 +50,5 @@ public class GameController : MonoBehaviour
     {
         return m_score;
     }
-
 
 }
