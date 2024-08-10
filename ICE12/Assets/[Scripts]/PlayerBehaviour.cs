@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerBehaviour : BaseController
 {
@@ -58,6 +59,11 @@ public class PlayerBehaviour : BaseController
         {
             thunderSound.Play();
             gameController.LoseLife();
+
+            if(gameController.GetLives() < 1)
+            {
+                SceneManager.LoadScene("End");
+            }
         }
     }
 }
