@@ -485,7 +485,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fb98c7f100a0bb42869a5fff97b5f78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  livesLabel: {fileID: 0}
+  livesLabel: {fileID: 2015575625}
   scoreLabel: {fileID: 2091181341}
 --- !u!4 &1514638109
 Transform:

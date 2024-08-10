@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class UIController : MonoBehaviour
 {
-   public void OnSceneButton_Pressed()
+    public void OnSceneButton_Pressed()
     {
         SceneManager.LoadScene("Main");
     }
